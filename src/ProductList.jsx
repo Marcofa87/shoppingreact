@@ -6,8 +6,18 @@ import { addItem } from "./CartSlice";
 function ProductList() {
   const dispatch = useDispatch();
   const [showCart, setShowCart] = useState(false);
-  const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
+  const [showPlants, setShowPlants] = useState(true); // State to control the visibility of the About Us page
   const [addedTocart, setAddedToCart] = useState({}); // State to store the items added to the cart
+  const cart = useSelector((state) => state.cart.items);
+
+  useEffect(() => {
+    const cartState = {};
+
+    cart.forEach((item) => {
+      cartState[item.name] = item.quantity > 0;
+    });
+    setAddedToCart(cartState);
+  }, [cart]);
 
   const handleAddToCart = (product) => {
     dispatch(addItem(product));
@@ -19,7 +29,6 @@ function ProductList() {
     }));
   };
 
-  const cart = useSelector((state) => state.cart.items);
   const cartQuantity = cart.reduce(
     (total, item) => total + item.quantity,
     null

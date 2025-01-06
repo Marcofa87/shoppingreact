@@ -198,6 +198,10 @@ body {
 }
 /* ProductList.css */
 
+.product-category {
+  margin: 20px auto;
+}
+
 .product-button {
   background-color: #4caf50; /* Green */
   border: none;

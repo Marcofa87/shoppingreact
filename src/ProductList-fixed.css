@@ -109,6 +109,23 @@ body {
     height: 20px;
     font-size: 12px;
   }
+
+  /* Nascondi testi e link non essenziali su mobile */
+  .luxury a div {
+    /* titolo + slogan */
+    display: none;
+  }
+
+  .navbar .ul > div:first-child {
+    /* link Plants */
+    display: none;
+  }
+
+  /* Ridimensiona icona carrello */
+  .cart svg {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* Product List Container */

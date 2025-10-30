@@ -224,20 +224,7 @@ body {
 }
 
 /* Sale Badge */
-.product-card::before {
-  content: "SALE";
-  background-color: var(--color-danger);
-  color: #fff;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5px 12px;
-  border-radius: 0 var(--radius-lg) 0 var(--radius-sm);
-  font-size: 0.8rem;
-  font-weight: 600;
-  z-index: 1;
-  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.25);
-}
+/* Badge SALE rimosso su richiesta */
 
 /* Tablet Layout */
 @media (min-width: 768px) {

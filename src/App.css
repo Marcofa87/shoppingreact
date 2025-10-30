@@ -131,7 +131,7 @@
   background-color: rgba(17, 24, 39, 1);
   overflow-y: auto;
   z-index: 1;
-  padding: 20px 0;
+  padding: 0;
 }
 
 /* Responsive Adjustments */

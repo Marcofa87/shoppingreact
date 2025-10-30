@@ -10,7 +10,11 @@
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  background-color: #f8f8f8;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0.85),
+    rgba(15, 23, 42, 0.95)
+  );
   overflow-y: auto;
 }
 
@@ -20,11 +24,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg');
+  background-image: url("https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: brightness(0.8);
+  filter: brightness(0.55) saturate(1.05);
   z-index: -1;
 }
 
@@ -36,8 +40,8 @@
   min-height: 100vh;
   width: 100%;
   padding: 20px;
-  backdrop-filter: blur(4px);
-  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
 }
 
@@ -46,7 +50,7 @@
   max-width: 600px;
   padding: 20px;
   text-align: center;
-  color: white;
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,30 +73,38 @@
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: #ffffff;
 }
 
 .content p {
   font-size: clamp(1rem, 2vw, 1.5rem);
   line-height: 1.5;
   margin-bottom: 1rem;
+  color: var(--color-text);
 }
 
 .divider {
-  width: 50px;
-  height: 2px;
-  background-color: #4caf50;
+  width: 64px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: 2px;
   margin: 1rem 0;
+  box-shadow: var(--shadow-md);
 }
 
 .get-started-button {
   padding: 12px 24px;
   font-size: 1.1rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #4caf50;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-600)
+  );
   color: white;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
   margin: 1.5rem auto 0;
   text-decoration: none;
   display: inline-block;
@@ -102,12 +114,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
+  box-shadow: var(--shadow-md);
 }
 
 .get-started-button:hover {
-  background-color: #45a049;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-lg);
+  filter: saturate(1.1);
 }
 
 /* Product List Container */
@@ -117,7 +130,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(17, 24, 39, 0.98);
   transition: transform 0.5s ease;
   overflow-y: auto;
   z-index: 1000;
@@ -130,48 +143,48 @@
 }
 
 /* Responsive Adjustments */
-/* Tablets */
+/* Tablet */
 @media screen and (max-width: 1024px) {
   .content {
     padding: 15px;
   }
-  
+
   .landing_content {
     max-width: 90%;
     padding: 15px;
   }
-  
+
   .content h1 {
     font-size: 2.5rem;
   }
-  
+
   .content p {
     font-size: 1.2rem;
   }
 }
 
-/* Small Tablets */
+/* Phablet */
 @media screen and (max-width: 768px) {
   .content {
     padding: 10px;
   }
-  
+
   .landing_content {
     max-width: 95%;
     padding: 15px 10px;
   }
-  
+
   .content h1 {
     font-size: 2.2rem;
   }
-  
+
   .get-started-button {
     padding: 10px 20px;
     font-size: 1rem;
   }
 }
 
-/* Mobile Devices */
+/* Mobile */
 @media screen and (max-width: 480px) {
   .content {
     padding: 10px 5px;
@@ -180,29 +193,29 @@
     justify-content: center;
     min-height: 100vh;
   }
-  
+
   .landing_content {
     width: 100%;
     padding: 15px 10px;
     box-sizing: border-box;
   }
-  
+
   .content h1 {
     font-size: 1.8rem;
     margin-bottom: 0.8rem;
     word-wrap: break-word;
   }
-  
+
   .content p {
     font-size: 1rem;
     line-height: 1.4;
     padding: 0 5px;
   }
-  
+
   .divider {
     margin: 0.8rem auto;
   }
-  
+
   .get-started-button {
     padding: 12px 20px;
     font-size: 1rem;
@@ -212,18 +225,18 @@
   }
 }
 
-/* Very Small Mobile Devices */
+/* Very Small Mobile */
 @media screen and (max-width: 360px) {
   .content h1 {
     font-size: 1.6rem;
     padding: 0 5px;
   }
-  
+
   .content p {
     font-size: 0.95rem;
     padding: 0 8px;
   }
-  
+
   .get-started-button {
     padding: 10px 16px;
     font-size: 0.95rem;
